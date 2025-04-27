@@ -1,0 +1,17 @@
+.icon {
+  color: inherit;
+  cursor: pointer;
+
+  &-primary {
+    color: #000000;
+  }
+  &-secondary {
+    color: #AFADB5;
+  }
+  &-accent {
+    color: #518581;
+  }
+  &-white {
+    color: #FFFFFF;
+  }
+}

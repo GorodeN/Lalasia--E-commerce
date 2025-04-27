@@ -1,0 +1,97 @@
+@use "styles/mixins" as *;
+
+.auth {
+  @include flex-center;
+  flex: 1;
+  height: auto;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+  }
+
+  &__banner {
+    flex: 1;
+    display: none;
+    border-radius: 8px 0px 0px 8px;
+    overflow: hidden;
+    background: #518581;
+    background: linear-gradient(
+      140deg,
+      rgba(81, 133, 129, 1) 0%,
+      rgba(182, 222, 199, 1) 21%,
+      rgba(151, 219, 181, 1) 42%,
+      rgba(143, 168, 152, 1) 58%,
+      rgba(81, 133, 129, 1) 81%,
+      rgba(235, 235, 221, 1) 100%
+    );
+
+    @media (min-width: 680px) {
+      display: flex;
+      width: 550px;
+      height: 60vh;
+    }
+
+    @media (max-height: 600px) {
+      height: 100vh;
+    }
+
+    &Img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 2rem;
+    width: 100%;
+    height: 60vh;
+    max-width: 460px;
+    background: var(--white);
+
+    @media (max-height: 725px) {
+      height: 100%;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__formInner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 1.5rem;
+
+    > div {
+      border: 1px solid rgb(229, 231, 235);
+
+      &:focus-within {
+        border: 1px solid var(--text-accent);
+      }
+    }
+  }
+
+  &__switch {
+    text-align: center;
+
+    &Link {
+      cursor: pointer;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

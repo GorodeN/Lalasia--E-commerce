@@ -1,0 +1,54 @@
+@use "styles/mixins" as *;
+
+.pagination {
+  font-family: var(--second-family);
+  @include flex-center;
+  padding: 70px;
+
+  &__button {
+    padding: 10px;
+    width: 38px;
+    border: 0;
+    background: transparent;
+    color: var(--second-family);
+    line-height: 180%;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--brand);
+      background: transparent;
+    }
+
+    &--active {
+      transition: 0.5s;
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+
+      &:hover {
+        background: var(--brand);
+        color: #fff;
+        cursor: default;
+      }
+    }
+  }
+
+  &__arrow {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 6px;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  &__arrowIcon {
+    display: block;
+
+    &:hover {
+      color: var(--brand);
+    }
+  }
+}

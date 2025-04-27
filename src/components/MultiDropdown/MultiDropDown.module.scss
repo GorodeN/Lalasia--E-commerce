@@ -1,0 +1,36 @@
+.multi-dropdown {
+  position: relative;
+  width: 100%;
+
+  .input {
+    margin-bottom: 8px;
+  }
+
+  &__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    list-style: none;
+    margin-top: 8px;
+    padding: 0;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+    background: var(--button-primary-text);
+    z-index: 1000;
+    max-height: 30vh;
+    overflow: auto;
+  }
+
+  &__option {
+    padding: 14px 12px;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--text-secondary);
+    }
+
+    &--selected {
+      color: var(--text-secondary);
+    }
+  }
+}

@@ -1,0 +1,127 @@
+@use "styles/mixins" as *;
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 3rem;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__subtitle {
+    max-width: 60ch;
+    line-height: 120%;
+  }
+
+  &__toolbar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 48px;
+
+    &-left {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    &-right {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 680px) {
+      justify-content: center;
+
+      &-right {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        margin-left: 0px;
+      }
+    }
+  }
+
+  &__search {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+
+    &-input {
+      flex: 1;
+      min-width: 150px;
+      box-shadow: 0px 10px 45px -10px rgba(0, 0, 0, 0.1);
+    }
+    &-button {
+      flex-shrink: 0;
+    }
+  }
+
+  &__total {
+    @include flex-center;
+    gap: 24px;
+  }
+
+  &__sort {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 14px 12px;
+
+    &-price {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    &:hover {
+      color: var(--brand);
+    }
+  }
+
+  &__filter {
+    min-width: 30%;
+    box-shadow: 0px 10px 45px -10px rgba(0, 0, 0, 0.1);
+  }
+
+  &__grid {
+    display: grid;
+    gap: 60px;
+    margin: 0 auto;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+
+    .outOfStock {
+      opacity: 0.5;
+    }
+  }
+}

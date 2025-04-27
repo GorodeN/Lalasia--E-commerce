@@ -1,0 +1,25 @@
+.backIcon {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover > * {
+    color: var(--brand);
+    border-color: var(--brand);
+  }
+
+  &-icon {
+    margin-right: 12px;
+    @media (max-width: 900px) {
+      border: 1px solid #000000;
+      border-radius: 50%;
+      padding: 5px;
+    }
+  }
+
+  &-text {
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,129 @@
+@use "styles/mixins" as *;
+.product {
+  &__back {
+    margin: 30px 0px 40px 0px;
+  }
+
+  &__container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    background: var(--button-primary-text);
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__imageWrapper {
+    position: relative;
+    height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 48px 24px 0;
+
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      padding: 24px;
+    }
+  }
+
+  &__title {
+    line-height: 109%;
+  }
+
+  &__description {
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+
+  &__price {
+    line-height: 109%;
+    margin-bottom: 24px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 24px;
+
+    & > * {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+
+      & > * {
+        width: 100%;
+      }
+    }
+  }
+
+  &__related {
+    margin-top: 48px;
+  }
+
+  &__relatedTitle {
+    margin-bottom: 20px;
+  }
+
+  &__relatedGrid {
+    display: grid;
+    gap: 48px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: 920px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 680px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.slider {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  top: 50%;
+  width: 100%;
+  padding: 0 16px;
+  line-height: 0;
+  transform: translateY(-50%);
+
+  & > * {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 100%;
+    padding: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: rgba(0, 0, 0, 1);
+    }
+  }
+
+  &__leftButton {
+    left: 16px;
+  }
+
+  &__rightButton {
+    right: 16px;
+  }
+}

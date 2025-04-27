@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fafafa;
+    padding: 2vh 10vw;
+  }
+
+  &__toast {
+    margin-top: 90px;
+  }
+}

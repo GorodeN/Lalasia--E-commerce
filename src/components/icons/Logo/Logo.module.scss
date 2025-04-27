@@ -1,0 +1,6 @@
+@use 'styles/mixins' as *;
+
+.logo {
+  @include flex-center;
+  cursor: pointer;
+}

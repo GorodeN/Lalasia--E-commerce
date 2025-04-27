@@ -1,0 +1,30 @@
+@import './Roboto/fonts';
+@import './variables.scss';
+
+html,
+body {
+  font-family: 'Roboto';
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  scrollbar-gutter: stable both-edges;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+pre {
+  margin: 0;
+}

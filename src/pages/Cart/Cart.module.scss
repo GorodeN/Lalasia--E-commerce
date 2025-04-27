@@ -1,0 +1,100 @@
+@use "styles/mixins" as *;
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+
+  &__loader {
+    @include flex-center;
+    flex: 1;
+  }
+
+  &__head {
+    margin-bottom: 48px;
+  }
+
+  &__back {
+    margin: 30px 0px 0px 0px;
+  }
+
+  &__description {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__subtitle {
+    max-width: 60ch;
+    line-height: 120%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__item {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: 24px;
+    border: 1px solid #eee;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  &__image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    row-gap: 10px;
+    min-width: 200px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &-decrease, &-increase {
+      min-height: auto;
+      min-width: 2.5rem;
+      padding: 10px 10px;
+      
+    }
+  }
+
+  &__summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    gap: 10px;
+
+    &-buttons {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}

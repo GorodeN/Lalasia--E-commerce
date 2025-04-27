@@ -1,0 +1,93 @@
+@use "styles/mixins" as *;
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+
+  h2 {
+    font-size: 32px;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48px;
+  }
+
+  &__description {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 3rem;
+
+    &-title {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__reviews {
+    &-title {
+      margin-bottom: 24px;
+    }
+
+    .review {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      &__avatar {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+      }
+
+      &__text {
+        text-align: center;
+      }
+
+      &__author {
+        text-align: right;
+        width: 100%;
+      }
+    }
+  }
+
+  &__map {
+    &Title {
+      margin-bottom: 1rem;
+    }
+
+    iframe {
+      border-radius: 8px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 48px;
+
+    &-title {
+      margin-bottom: 24px;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+
+      &:hover {
+        color: var(--brand);
+      }
+    }
+  }
+}

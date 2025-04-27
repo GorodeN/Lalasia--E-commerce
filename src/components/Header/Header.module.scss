@@ -1,0 +1,168 @@
+@use "styles/mixins" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 2px solid #f3f3f3;
+  height: 90px;
+  padding: 0 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  .iconsDesktop {
+    display: flex;
+    gap: 24px;
+    width: 119px;
+    justify-content: flex-end;
+
+    @media (max-width: 680px) {
+      display: none;
+    }
+
+    > *:hover {
+      color: var(--brand);
+      transition: 0.2s;
+    }
+  }
+
+  .iconsMobile {
+    display: none;
+    flex-direction: row;
+    gap: 24px;
+
+    @media (max-width: 680px) {
+      display: flex;
+      justify-content: center;
+    }
+
+    > *:hover {
+      color: var(--brand);
+      transition: 0.2s;
+    }
+  }
+
+  .cartIcon,
+  .profileIcon {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .cartBadge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: var(--brand);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    @include flex-center;
+  }
+
+  .profileBadge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--brand);
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+
+  .burgerIcon {
+    display: none;
+
+    @media (max-width: 680px) {
+      display: flex;
+    }
+  }
+
+  /* Общие стили для меню */
+  nav {
+    .navContent {
+      display: flex;
+      gap: 5%;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+
+      a {
+        text-decoration: none;
+        position: relative;
+
+        &::before {
+          content: "";
+          background: var(--brand);
+          width: 0;
+          height: 2px;
+          display: block;
+          position: absolute;
+          bottom: -35px;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: 0.3s;
+        }
+
+        &:hover::before {
+          width: calc(100% + 10px);
+        }
+      }
+    }
+  }
+
+  .navDesktop {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 680px) {
+      display: none;
+    }
+  }
+
+  .navMobile {
+    display: none;
+    
+    @media (max-width: 680px) {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 90px;
+      left: 0;
+      right: 0;
+      background: #fffffff5;
+      padding: 20px;
+      gap: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      z-index: 1001;
+
+      .navContent {
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        text-align: center;
+
+        a {
+          line-height: 3rem;
+          width: 100%;
+
+          &:focus {
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.06);
+          }
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

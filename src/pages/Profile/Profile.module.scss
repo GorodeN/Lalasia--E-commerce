@@ -1,0 +1,36 @@
+@use "styles/mixins" as *;
+
+.profile {
+  @include flex-center;
+  flex: 1;
+  height: auto;
+  flex-wrap: wrap;
+
+  &__card {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    background: var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  &__title {
+    @include flex-center;
+  }
+
+  &__content {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__icon {
+    border: 2px solid var(--text-primary);
+    border-radius: 50%;
+    padding: 0.5rem;
+  }
+}
