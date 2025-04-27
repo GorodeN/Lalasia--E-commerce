@@ -21,6 +21,7 @@ const parseTsConfigPaths = (paths: Record<string, string[]>): Record<string, str
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Lalasia--E-commerce/',
   plugins: [react()],
   resolve: {
     alias: parseTsConfigPaths(tsconfig.compilerOptions.paths),

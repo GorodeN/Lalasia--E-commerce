@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { routesConfig } from 'config/routesConfig';
 import './config/configureMobX';
 
-const router = createBrowserRouter(routesConfig);
+const router = createHashRouter(routesConfig);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <RouterProvider router={router} />
